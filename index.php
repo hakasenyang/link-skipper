@@ -33,15 +33,8 @@
 			// adf.ly source by http://skizzerz.net/scripts/adfly.php
 			case 'adf.ly':
 				$data = $aa->WEBParsing($url);
-				if ( preg_match( "#var ysmm = '([a-zA-Z0-9+/=]+)'#", $data, $matches ) ) {
+				if ( preg_match( "#var ysmm = '([a-zA-Z0-9+/=]+)'#", $data, $matches ) )
 					$data = $final = $url = $aa->decode_adfly( $matches[1] );
-					//echo $final;
-					/*$data = $aa->WEBParsing($url);
-					if ( preg_match_all( '/Location:\s*(.+)\s*$/im', $data, $matches, PREG_SET_ORDER ) ) {
-					    $last = array_pop( $matches );
-					    $final = trim( $last[1] );
-					}*/
-				}
 				break;
 			case 'adfoc.us':
 				$data = $aa->WEBParsing($url, NULL, NULL, array('Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'));

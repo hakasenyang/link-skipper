@@ -14,7 +14,7 @@
 			$temp = $temp[0];
 			return $temp;
 		}
-		public function WEBParsing($url, $cookie=NULL, $postparam=NULL, $otherheader=NULL)
+		public function WEBParsing($url, $cookie = NULL, $postparam = NULL, $otherheader = NULL)
 		{
 			$uri = parse_url($url);
 			$paramType = strtoupper($paramType);
@@ -27,7 +27,7 @@
 				CURLOPT_CONNECTTIMEOUT => 5,
 				CURLOPT_SSL_VERIFYPEER => FALSE,
 				CURLOPT_HEADER => 1,
-				);
+			);
 			curl_setopt_array($ch, $opts);
 			if ($uri['host'] != 'sh.st') curl_setopt($ch, CURLOPT_USERAGENT, $this->httph);
 			if ($otherheader) curl_setopt($ch, CURLOPT_HTTPHEADER, $otherheader);
@@ -48,13 +48,18 @@
 		 * @return [string]       [Original URL]
 		 * Source by http://skizzerz.net/scripts/adfly.php
 		 */
-		public function decode_adfly( $ysmm ) {
+		public function decode_adfly( $ysmm )
+		{
 			$left = '';
 			$right = '';
-			for ( $i = 0; $i < strlen( $ysmm ); $i++ ) {
-				if ( $i % 2 == 0 ) {
+			for ( $i = 0; $i < strlen( $ysmm ); $i++ )
+			{
+				if ( $i % 2 == 0 )
+				{
 					$left .= $ysmm[$i];
-				} else {
+				}
+				else
+				{
 					$right = $ysmm[$i] . $right;
 				}
 			}

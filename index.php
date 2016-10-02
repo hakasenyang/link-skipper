@@ -8,7 +8,8 @@
 	include_once '_function.php';
 	$aa = new Redirect();
 	$url = $_GET['url'];
-	if($url) {
+	if($url)
+	{
 		$urls = parse_url($url);
 		switch($urls['host'])
 		{
@@ -61,7 +62,12 @@
 				echo 'Not supported. (E-mail: contact@hakase.kr)';
 				break;
 		}
-		if($data) echo $data; else echo 'Error';
+
+		if($data)
+			echo $data;
+		else
+			echo 'Error';
+
 		exit;
 	}
 ?>
@@ -69,6 +75,7 @@
 <a href='?url=<?php echo urlencode('http://me2.do/G4AB9cJL');?>'>http://me2.do/G4AB9cJL</a><br>
 <a href='?url=<?php echo urlencode('https://goo.gl/AIScrC');?>'>https://goo.gl/AIScrC</a><br>
 <a href='?url=<?php echo urlencode('http://bit.ly/29O1WJt');?>'>http://bit.ly/29O1WJt</a><br>
-<a href='?url=<?php echo urlencode('http://durl.kr/cpubjn');?>'>http://durl.kr/cpubjn</a></p>
+<a href='?url=<?php echo urlencode('http://durl.kr/cpubjn');?>'>http://durl.kr/cpubjn</a><br>
+And the other...</p>
 <p>How to use? : ?url=URL<br>
 Supported URL : me2.do / goo.gl / tinyurl.com / me2.do / durl.kr / adf.ly / sh.st / adfoc.us / bc.vc (wait for 5 seconds)</p>

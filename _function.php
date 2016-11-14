@@ -17,9 +17,8 @@
 		public function WEBParsing($url, $cookie = NULL, $postparam = NULL, $otherheader = NULL)
 		{
 			$uri = parse_url($url);
-			$paramType = strtoupper($paramType);
-			if (!$uri['port']) $uri['port'] = 80;
-			if (!$uri['path']) $uri['path'] = "/";
+			if (!isset($uri['port'])) $uri['port'] = 80;
+			if (!isset($uri['path'])) $uri['path'] = "/";
 			$ch = curl_init();
 			$opts = array(CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_URL => $url,

@@ -1,3 +1,7 @@
+<form action="/" method="get">
+  URL: <input type="text" name="url" max="50">
+  <input type="submit" value="Submit">
+</form>
 <?php
 	/**
 	 * Redirect Bypass PHP
